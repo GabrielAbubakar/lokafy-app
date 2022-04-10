@@ -13,7 +13,16 @@
       </div>
 
       <div class="button-container">
-        <input aria-label="button" type="button" value="More Reviews" />
+        <input
+          aria-label="button"
+          type="button"
+          class="more-button"
+          value="More Reviews"
+        />
+
+        <router-link to="/formpage" class="review-button"
+          >Write a Review</router-link
+        >
       </div>
     </div>
   </div>
@@ -55,9 +64,10 @@ h1 {
 .button-container {
   display: flex;
   justify-content: center;
+  gap: 2rem;
 }
 
-input[type="button"] {
+.more-button {
   cursor: pointer;
   text-align: center;
   padding: 0.7rem 1.4rem;
@@ -69,7 +79,44 @@ input[type="button"] {
   font-size: 1rem;
 }
 
-input[type="button"]:hover {
+.review-button {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.7rem 1.4rem;
+  background-color: #555;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "Nunito Sans", Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.more-button:hover {
   text-decoration: underline;
+}
+
+.review-button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  .card-container {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
+  .card-container {
+    max-width: 600px;
+    padding-inline: 1rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

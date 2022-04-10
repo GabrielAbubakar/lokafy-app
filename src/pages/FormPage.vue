@@ -1,75 +1,123 @@
 <template>
-  <div>
-    <Navigation />
+  <Navigation />
+  <div class="formpage-container">
+    <h2>Write Up a review</h2>
 
-    <div class="review-container">
-      <h1>Reviewssss</h1>
-
-      <div class="card-container">
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
+    <form action="">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input
+          placeholder="Your Name"
+          v-model="name"
+          aria-label="name"
+          type="text"
+          id="name"
+          required
+        />
+      </div>
+      <div class="input-group">
+        <label for="country">Country of Visit</label>
+        <input
+          placeholder="Where did you spend your time"
+          v-model="country"
+          aria-label="country"
+          type="text"
+          id="country"
+          required
+        />
+      </div>
+      <div class="input-group">
+        <label for="image">Image URL(Optional)</label>
+        <input
+          v-model="image"
+          aria-label="image"
+          type="text"
+          id="image"
+          placeholder="Include an Image url with your review"
+        />
+      </div>
+      <div class="input-group">
+        <label for="review">Review</label>
+        <textarea
+          v-model="review"
+          id="review"
+          cols="30"
+          rows="10"
+          placeholder="Express in your words how you felt about your tour"
+        ></textarea>
       </div>
 
-      <div class="button-container">
-        <input aria-label="button" type="button" value="More Reviews" />
-      </div>
-    </div>
+      <button>Submit</button>
+    </form>
   </div>
 </template>
 
 <script>
 import Navigation from "../components/NavBar.vue";
-import ReviewCard from "../components/ReviewCard.vue";
 
 export default {
-  name: "Reviews",
+  name: "FormPage",
   components: {
     Navigation,
-    ReviewCard,
+  },
+  data() {
+    return {
+      name: "",
+      country: "",
+      review: "",
+      url: "",
+    };
   },
 };
 </script>
 
 <style scoped>
-h1 {
-  color: #555555;
-  margin-top: 4rem;
-  font-family: "League Spartan", sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.card-container {
+.formpage-container {
   max-width: 1140px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2rem;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-input[type="button"] {
-  cursor: pointer;
-  text-align: center;
-  padding: 0.7rem 1.4rem;
-  background-color: #0aa6bf;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
+.input-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+}
+
+input,
+textarea {
   font-family: "Nunito Sans", Avenir, Helvetica, Arial, sans-serif;
+  width: 60%;
+  border: 0;
+  outline: 0;
+  background-color: #dfdddd;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.7rem;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
   font-size: 1rem;
 }
 
-input[type="button"]:hover {
-  text-decoration: underline;
+@media (max-width: 700px) {
+  .formpage-container {
+    padding-inline: 1rem;
+  }
+
+  textarea,
+  input {
+    width: 100%;
+  }
 }
 </style>
