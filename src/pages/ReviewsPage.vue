@@ -6,18 +6,31 @@
       <h1>Reviews</h1>
 
       <div class="card-container">
+        <ReviewCard
+          v-bind:key="reviews[item].name"
+          v-for="item in count"
+          :name="reviews[item].name"
+          :city="reviews[item].city"
+          :review="reviews[item].review"
+          :img="reviews[item].imgSrc"
+        />
+        <!-- <ReviewCard />
         <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
+        <ReviewCard /> -->
       </div>
+
+      <p v-if="count + 2 >= reviews.length" class="review-check">
+        No more Reviews
+      </p>
 
       <div class="button-container">
         <input
+          v-if="count + 2 < reviews.length"
           aria-label="button"
           type="button"
           class="more-button"
           value="More Reviews"
+          v-on:click="incrementCount"
         />
 
         <router-link to="/formpage" class="review-button"
@@ -37,6 +50,115 @@ export default {
   components: {
     Navigation,
     ReviewCard,
+  },
+
+  data() {
+    return {
+      count: 4,
+      reviews: [
+        {
+          name: "Stefan",
+          city: "Helsinki",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/citypicture/44_helsinki-3778356_citypicture.jpg.1200x1600_q85_box-467%2C0%2C3096%2C1966_crop-scale_detail_upscale.jpg",
+          review:
+            "Die Führung war sehr gut. Es wurde auf meine Wünsche eingegangen. Ich kann absolut nicht klagen. Gerne wieder. ",
+        },
+        {
+          name: "Lea",
+          city: "Venice",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/citypicture/38_citypicture.jpg.1200x1600_q85_box-301%2C0%2C5028%2C3545_crop-scale_detail_upscale.jpg",
+          review: "Très bonne expérience, à faire pour une première à Venise.",
+        },
+        {
+          name: "Richard",
+          city: "Vienna",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/userreview/938/bff121c8ca6f462b9606a7997d030bff_userpicturebff121c8ca6f462b9606a7997d030bff.1200x1600_q85_box-0%2C0%2C3264%2C2448_crop-scale_detail_upscale.jpg",
+          review:
+            "Wonderful. Our guide, Frediano, was a marvellous introduction to Vienna. In two hours we covered a wide range of buildings, churches and even patisseries. Would heartily recommend him.",
+        },
+        {
+          name: "Michel",
+          city: "Copenhagen",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/userreview/724/f79081813b494f68961642f6d5cc1de5_userpicturef79081813b494f68961642f6d5cc1de5.1200x1600_q85_box-0%2C0%2C4160%2C3120_crop-scale_detail_upscale.jpg",
+          review:
+            "sympa simple chalheureux très intéressant Personne charmente remplissant parfaitement son rôle Dear Dalit It was a pleasure to share this moment with you in Copenhagen this morning. Thank you for the quality of your presentation. Have a nice Weekend. Michel",
+        },
+        {
+          name: "Matt",
+          city: "Groningen",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/citypicture/None_victor-garcia-1093050-unsplash_citypicture.jpg.1200x1600_q85_box-3%2C0%2C4045%2C3032_crop-scale_detail_upscale.jpg",
+          review:
+            "Cycling through Groningen with Alexander was perfect. Our guide, Alexander, did an incredible job. He knew the city inside and out and happily honored our request to see neighborhoods instead of tourist spots. This was Alexanderâs first tour but he seemed like a well seasoned pro. He was gracious, polite, open to requests, and extremely easy going.",
+        },
+        {
+          name: "Stefan",
+          city: "Helsinki",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/citypicture/44_helsinki-3778356_citypicture.jpg.1200x1600_q85_box-467%2C0%2C3096%2C1966_crop-scale_detail_upscale.jpg",
+          review:
+            "Die Führung war sehr gut. Es wurde auf meine Wünsche eingegangen. Ich kann absolut nicht klagen. Gerne wieder. ",
+        },
+        {
+          name: "Lea",
+          city: "Venice",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/citypicture/38_citypicture.jpg.1200x1600_q85_box-301%2C0%2C5028%2C3545_crop-scale_detail_upscale.jpg",
+          review: "Très bonne expérience, à faire pour une première à Venise.",
+        },
+        {
+          name: "Richard",
+          city: "Vienna",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/userreview/938/bff121c8ca6f462b9606a7997d030bff_userpicturebff121c8ca6f462b9606a7997d030bff.1200x1600_q85_box-0%2C0%2C3264%2C2448_crop-scale_detail_upscale.jpg",
+          review:
+            "Wonderful. Our guide, Frediano, was a marvellous introduction to Vienna. In two hours we covered a wide range of buildings, churches and even patisseries. Would heartily recommend him.",
+        },
+        {
+          name: "Michel",
+          city: "Copenhagen",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/userreview/724/f79081813b494f68961642f6d5cc1de5_userpicturef79081813b494f68961642f6d5cc1de5.1200x1600_q85_box-0%2C0%2C4160%2C3120_crop-scale_detail_upscale.jpg",
+          review:
+            "sympa simple chalheureux très intéressant Personne charmente remplissant parfaitement son rôle Dear Dalit It was a pleasure to share this moment with you in Copenhagen this morning. Thank you for the quality of your presentation. Have a nice Weekend. Michel",
+        },
+        {
+          name: "Matt",
+          city: "Groningen",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/citypicture/None_victor-garcia-1093050-unsplash_citypicture.jpg.1200x1600_q85_box-3%2C0%2C4045%2C3032_crop-scale_detail_upscale.jpg",
+          review:
+            "Cycling through Groningen with Alexander was perfect. Our guide, Alexander, did an incredible job. He knew the city inside and out and happily honored our request to see neighborhoods instead of tourist spots. This was Alexanderâs first tour but he seemed like a well seasoned pro. He was gracious, polite, open to requests, and extremely easy going.",
+        },
+        {
+          name: "Richard",
+          city: "Vienna",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/userreview/938/bff121c8ca6f462b9606a7997d030bff_userpicturebff121c8ca6f462b9606a7997d030bff.1200x1600_q85_box-0%2C0%2C3264%2C2448_crop-scale_detail_upscale.jpg",
+          review:
+            "Wonderful. Our guide, Frediano, was a marvellous introduction to Vienna. In two hours we covered a wide range of buildings, churches and even patisseries. Would heartily recommend him.",
+        },
+        {
+          name: "Michel",
+          city: "Copenhagen",
+          imgSrc:
+            "https://lokafy.s3.amazonaws.com/userreview/724/f79081813b494f68961642f6d5cc1de5_userpicturef79081813b494f68961642f6d5cc1de5.1200x1600_q85_box-0%2C0%2C4160%2C3120_crop-scale_detail_upscale.jpg",
+          review:
+            "sympa simple chalheureux très intéressant Personne charmente remplissant parfaitement son rôle Dear Dalit It was a pleasure to share this moment with you in Copenhagen this morning. Thank you for the quality of your presentation. Have a nice Weekend. Michel",
+        },
+      ],
+    };
+  },
+
+  methods: {
+    incrementCount() {
+      this.count = this.count + 2;
+      return this.count;
+    },
   },
 };
 </script>
@@ -90,6 +212,13 @@ h1 {
   color: #fff;
   font-family: "Nunito Sans", Avenir, Helvetica, Arial, sans-serif;
   font-size: 1rem;
+}
+
+.review-check {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .more-button:hover {
