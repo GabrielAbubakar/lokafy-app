@@ -1,15 +1,10 @@
 <template>
-  <Reviews />
+  <router-view />
 </template>
 
 <script>
-import Reviews from "./pages/ReviewsPage.vue";
-
 export default {
   name: "App",
-  components: {
-    Reviews,
-  },
 };
 </script>
 

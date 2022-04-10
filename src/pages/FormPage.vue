@@ -3,7 +3,7 @@
     <Navigation />
 
     <div class="review-container">
-      <h1>Reviews</h1>
+      <h1>Reviewssss</h1>
 
       <div class="card-container">
         <ReviewCard />
@@ -24,7 +24,7 @@ import Navigation from "../components/NavBar.vue";
 import ReviewCard from "../components/ReviewCard.vue";
 
 export default {
-  name: "Review",
+  name: "Reviews",
   components: {
     Navigation,
     ReviewCard,
