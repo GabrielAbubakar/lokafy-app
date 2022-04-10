@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 h1 {
-  color: lightblue;
+  color: #0aa6bf;
 }
 
 nav {
@@ -62,5 +62,11 @@ nav li {
 
 nav li:hover {
   border-bottom: 1px solid black;
+}
+
+@media (max-width: 800px) {
+  nav ul {
+    display: none;
+  }
 }
 </style>
