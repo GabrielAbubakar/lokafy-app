@@ -1,22 +1,15 @@
 <template>
   <div class="review-card">
     <div class="review-img-container">
-      <img
-        src="https://lokafy.s3.amazonaws.com/citypicture/None_victor-garcia-1093050-unsplash_citypicture.jpg.1200x1600_q85_box-3%2C0%2C4045%2C3032_crop-scale_detail_upscale.jpg"
-        alt="city-img"
-      />
+      <img v-bind:src="img" alt="city-img" />
     </div>
 
     <div class="review-box">
-      <p class="review-text">
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni autem
-        voluptates minus praesentium cupiditate! Neque voluptatum ut vel
-        repellat optio!"
-      </p>
+      <p class="review-text">"{{ review }}"</p>
       <a href="">+ Read More</a>
 
-      <h2>Matt</h2>
-      <p>Tour of Unknown</p>
+      <h2>{{ name }}</h2>
+      <p>Tour of {{ city }}</p>
     </div>
   </div>
 </template>
@@ -26,6 +19,7 @@
 <script>
 export default {
   name: "ReviewCard",
+  props: ["name", "city", "review", "img"],
 };
 </script>
 
@@ -55,6 +49,10 @@ img {
 
 .review-text {
   font-size: 1.375em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .review-box a {
