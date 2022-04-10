@@ -93,7 +93,7 @@ export default {
           imgSrc:
             "https://lokafy.s3.amazonaws.com/citypicture/None_victor-garcia-1093050-unsplash_citypicture.jpg.1200x1600_q85_box-3%2C0%2C4045%2C3032_crop-scale_detail_upscale.jpg",
           review:
-            "Cycling through Groningen with Alexander was perfect. Our guide, Alexander, did an incredible job. He knew the city inside and out and happily honored our request to see neighborhoods instead of tourist spots. This was Alexanderâs first tour but he seemed like a well seasoned pro. He was gracious, polite, open to requests, and extremely easy going.",
+            "Cycling through Groningen with Alexander was perfect. Our guide, Alexander, did an incredible job. He knew the city inside and out and happily honored our request to see neighborhoods instead of tourist spots. This was Alexanders first tour but he seemed like a well seasoned pro. He was gracious, polite, open to requests, and extremely easy going.",
         },
         {
           name: "Stefan",
@@ -132,7 +132,7 @@ export default {
           imgSrc:
             "https://lokafy.s3.amazonaws.com/citypicture/None_victor-garcia-1093050-unsplash_citypicture.jpg.1200x1600_q85_box-3%2C0%2C4045%2C3032_crop-scale_detail_upscale.jpg",
           review:
-            "Cycling through Groningen with Alexander was perfect. Our guide, Alexander, did an incredible job. He knew the city inside and out and happily honored our request to see neighborhoods instead of tourist spots. This was Alexanderâs first tour but he seemed like a well seasoned pro. He was gracious, polite, open to requests, and extremely easy going.",
+            "Cycling through Groningen with Alexander was perfect. Our guide, Alexander, did an incredible job. He knew the city inside and out and happily honored our request to see neighborhoods instead of tourist spots. This was Alexanders first tour but he seemed like a well seasoned pro. He was gracious, polite, open to requests, and extremely easy going.",
         },
         {
           name: "Richard",
