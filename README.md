@@ -3,7 +3,10 @@ This is the base respository for the trial app for an application for frontend d
 
 
 ## Project Setup
-This project is bootstrapped with the Vue Create App utility. This enabled the building of the user interface and fucitonality for the app with the Vue ecosystem. There is also the inclusion of the Vue router utility to enable the use of routes for the two different parts of the app.
+This project is bootstrapped with the Vue Create App utility. This enabled the building of the user interface and fucitonality for the app with the Vue ecosystem. There is also the inclusion of the Vue router utility to enable the use of routes for the two different parts of the app. The commands that will be helpful to demo the project include 
+- npm install  to install the dependencies
+- npm run serve  Compiles and hot-reloads for development
+- npm run build  Compiles and minifies for production
 
 
 ## File Structure
@@ -14,5 +17,6 @@ Most of the app functionality is contained in the /src where it is divided into:
 
 
 ## The Review Data
-Because of the unavailablity of a database containing the data of the reviews of the clients, dummy data was hard coded into the Reviews Page through an array of objects containing dummy reviews. This can be found in the src/pages/ReviewsPage.vue directory.
+Because of the unavailablity of a database containing the data of the reviews of the clients, dummy data was hard coded into the Reviews Page through an array of objects containing dummy reviews. This can be found in the src/pages/ReviewsPage.vue directory. 
+
 
