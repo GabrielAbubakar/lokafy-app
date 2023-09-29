@@ -1,5 +1,5 @@
 # Lokafy Trial App (Instructions and Guide)
-This is the base respository for the trial app for an application for frontend developer at Lokafy.
+This is the base respository for the trial app for an application for front-end developer at Lokafy.
 
 
 ## Project Setup
